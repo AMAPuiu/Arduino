@@ -7,9 +7,6 @@ const int pushButton = 2;
 int buttonState = HIGH;
 int passiveBuzzerValue = 0;
 
-//unsigned long lastDebounceTime = 0;
-//unsigned long debounceDelay = 50;
-//int lastButtonState = LOW;
 
 const int threshold = 1;
 unsigned long previousMillis = 0;
@@ -49,7 +46,7 @@ void loop() {
     }
     
   }
-delay(10);
+
 }
 
 int sing(const int activeBuzzerPin){
@@ -59,7 +56,10 @@ int sing(const int activeBuzzerPin){
     tone(activeBuzzerPin, melody[thisNote], noteDuration);
   
     int pauseBetweenNotes = noteDuration * 1.30;
-    delay(pauseBetweenNotes);
+    unsigned long beforePause = millis();
+    while(millis() - beforePause < pauseBetweenNotes){
+    }
+ 
     noTone(8);
     buttonState = digitalRead(pushButton);
   }
