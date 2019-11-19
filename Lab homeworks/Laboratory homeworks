@@ -1,2 +1,3 @@
 1. analogRGBControl.ino - Controlling each RGB led color with a potentiometer
 2. knockdetector.ino - Once a knock is detected by a passive buzzer, a melody will start which is then closed by pressing a button.
+3. 4-digitDisplayJoystickControl.ino - Controlling each digit of the segment with the joystick
